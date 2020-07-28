@@ -64,7 +64,7 @@
 </div>
 <script>
 $( document ).ready(function() {
-    $.ajax({url: "SqlGetTableInfo.jsp", success: function(result){
+    $.ajax({url: "lib/SqlGetTableInfo.jsp", success: function(result){
         var Json_TableInfo = JSON.parse(result);
         var propCount = Object.keys(Json_TableInfo).length;
         Json2Table(Json_TableInfo , 1);
@@ -88,7 +88,7 @@ $("#CmdForm").submit(function(e) {
     
     $.ajax({
         type: "POST",
-        url: "SqlCmdAjax.jsp",        
+        url: "lib/SqlCmdAjax.jsp",        
         data: {"TableName":$('#TableName').val(),"FieldName":$('#FieldName').val()},
         success: function (msg) {
             var CmdResult = JSON.parse(msg);
